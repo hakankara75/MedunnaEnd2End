@@ -1,4 +1,4 @@
-package stepDefinitions;
+package stepDefinitions.e2e_test;
 
 import io.cucumber.java.en.*;
 import pages.MedunnaHomePage;

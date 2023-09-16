@@ -6,14 +6,14 @@ import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonIgnoreProp
 public class RoomPojo {
     private int roomNumber;
     private String roomType;
-    private boolean status;
+    private Object status;
     private double price;
     private String description;
 
     public RoomPojo() {
     }
 
-    public RoomPojo(int roomNumber, String roomType, boolean status, double price, String description) {
+    public RoomPojo(int roomNumber, String roomType, Object status, double price, String description) {
         this.roomNumber = roomNumber;
         this.roomType = roomType;
         this.status = status;
@@ -37,7 +37,7 @@ public class RoomPojo {
         this.roomType = roomType;
     }
 
-    public boolean getStatus() {
+    public Object getStatus() {
         return status;
     }
 

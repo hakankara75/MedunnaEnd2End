@@ -55,7 +55,7 @@ public class DataBase_RoomStepDefinitions {
         ResultSet resultSet = statement.executeQuery(query);
         resultSet.next(); //next pointer'i bir alt satira atar.
 
-       RoomPojo expectedData= new RoomPojo(roomNumberFaker, "PREMIUM_DELUXE", true, 500.00, "Ardahan manzaralı");
+       RoomPojo expectedData= new RoomPojo(roomNumberFaker, "PREMIUM_DELUXE", "t", 500.00, "Ardahan manzaralı");
 
 
         assertEquals(expectedData.getRoomNumber(), resultSet.getInt("room_number"));

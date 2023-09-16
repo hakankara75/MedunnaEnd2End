@@ -3,9 +3,6 @@ package base_Urls;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import org.jsoup.Connection;
-import org.junit.runner.Request;
-
 import static utilities.AuthenticationMedunna.generateToken;
 
 public class MedunnaBaseUrl {

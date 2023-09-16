@@ -2,10 +2,17 @@ package stepDefinitions.e2e_test;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MedunnaHomePage;
 import pages.MedunnaRoomPage;
 import utilities.Driver;
+
+import java.time.Duration;
 
 public class UI_MedunnaRoomStepDefinitions {
 
@@ -58,7 +65,13 @@ public class UI_MedunnaRoomStepDefinitions {
     }
     @When("click on Save button")
     public void click_on_save_button() throws InterruptedException {
-        medunnaRoomPage.saveSubmitButton.click();
+//        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
+//        WebElement saveSubmitButton= medunnaRoomPage.saveSubmitButton;
+//        wait.until(ExpectedConditions.visibilityOf(saveSubmitButton));
+//        saveSubmitButton.click();
+        WebElement saveSubmitButton = Driver.getDriver().findElement(By.id("save-entity"));
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) Driver.getDriver();
+        jsExecutor.executeScript("arguments[0].click();", saveSubmitButton);
         Thread.sleep(1000);
         roomId = medunnaRoomPage.alert.getText().replaceAll("[^0-9]","");
 

@@ -76,7 +76,7 @@ public class RoomCreationStepDefinitions {
         //3. Yol: Map ile
         Map<String, Object> actualDataMap = response.as(HashMap.class);
         assertEquals(201, response.statusCode());
-        assertEquals(expectedDataMap.get("roomNumber") + ".0", actualDataMap.get("roomNumber") + "");
+        assertEquals(expectedDataMap.get("roomNumber") + ".0", actualDataMap.get("roomNumber") + ".0");
         assertEquals(expectedDataMap.get("roomType"), actualDataMap.get("roomType"));
         assertEquals(expectedDataMap.get("status"), actualDataMap.get("status"));
         assertEquals(expectedDataMap.get("price") + ".0", actualDataMap.get("price") + "");

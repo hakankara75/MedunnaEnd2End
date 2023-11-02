@@ -56,7 +56,7 @@ public class Api_RoomStepDefinitions {
         spec.pathParams("first", "api", "second", "rooms", "third", roomId);
 
         //set the expected data
-      expectedData= new RoomPojo(roomNumberFaker, "PREMIUM_DELUXE", true, 500.00F, "Ardahan manzaralı");
+      expectedData= new RoomPojo(roomNumberFaker, "PREMIUM_DELUXE", "t", 500.00F, "Ardahan manzaralı");
 
       //send the request and get the response
         response= given(spec).get("{first}/{second}/{third}");

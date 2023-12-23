@@ -29,18 +29,24 @@ public class Driver {
                 // browser secimi yapilmadiysa default olarak chrome devreye girecek
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
+                    System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver-win64\\chromedriver.exe");
+                    ChromeOptions options= new ChromeOptions();
+                    options.addArguments("--headless"); // Headless test yapmak icin
+                    options.addArguments("--disaple-gpu"); //GPU kullanimini devre disi birakir
+                    //driver= new ChromeDriver(options); //bu kodu headless testte acarsinizi
+
+                    //asagidaki kodlar file download yaparken default deger olan download klasoru yerine bir yol vermemize yarar
+//                    ChromeOptions options = new ChromeOptions();
+//                    String filePath ="C:\\Hakan Arsiv";
+//                    Map<String, Object> prefs = new HashMap<>();
+//                    prefs.put("download.default_directory", filePath);
+//                    options.setExperimentalOption("prefs", prefs);
+                    //  driver = new ChromeDriver(options);  //bu satirdaki yorum slashlarini bir alt satira indirip calistirmaliyiz.
                     driver = new ChromeDriver();
                     break;
 
 
-                //1-asagideki 3 satirdaki kodlar testleri Headless (Jenkins gibi) kosmak istedigimiz yerlerde aktive edilebilir
-//                    ChromeOptions options = new ChromeOptions();
-//                    options.addArguments("--headless"); // Başsız modu etkinleştir
-//                    options.addArguments("--disable-gpu"); // GPU kullanımını devre dışı bırak
 
-                //2- yukardaki options objesini ChromeDriver() icine parametre olarak atiyorum
-//                    driver = new ChromeDriver(options);
-//                    break;
 
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
